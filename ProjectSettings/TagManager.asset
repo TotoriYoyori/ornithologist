@@ -11,13 +11,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Distance
+  - Parallax
   - Water
   - UI
   - NPCs
-  - 
-  - 
-  - 
+  - Midground
+  - Foreground
+  - Decoration
   - 
   - 
   - 
@@ -46,4 +46,19 @@ TagManager:
     locked: 0
   - name: NPCs
     uniqueID: 652045681
+    locked: 0
+  - name: UI
+    uniqueID: 68729013
+    locked: 0
+  - name: Decoration
+    uniqueID: 1943947017
+    locked: 0
+  - name: Foreground
+    uniqueID: 983924039
+    locked: 0
+  - name: Midground
+    uniqueID: 615218253
+    locked: 0
+  - name: Background
+    uniqueID: 443822259
     locked: 0
