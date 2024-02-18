@@ -11,10 +11,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Parallax
+  - Distance
   - Water
   - UI
-  - 
+  - NPCs
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NPCs
+    uniqueID: 652045681
     locked: 0
