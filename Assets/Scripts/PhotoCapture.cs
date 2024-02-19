@@ -16,17 +16,19 @@ public class PhotoCapture : MonoBehaviour
     [Header("Photo Fader Effect")]
     [SerializeField] private Animator fadeInAnimation;
 
+    [Header("Zoom Check")]
+    [SerializeField] private ZoomOnClick zoomScript; // Reference to the ZoomOnClick script
+
+    [Header("Bird Check")]
+    [SerializeField] private BirdDetector[] birdDetectors; // Array of BirdDetector scripts
+
     private Texture2D screenCapture;
-    private Texture2D storedPhotoTexture;
     private bool viewingPhoto;
     private int storedPhotosCount = 0; // Count of currently stored photos
-    private ZoomOnClick zoomScript; // Reference to the ZoomOnClick script
 
     private void Start()
     {
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-        storedPhotoTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-        zoomScript = GetComponent<ZoomOnClick>(); // Get the ZoomOnClick component
     }
 
     private void Update()
@@ -36,7 +38,6 @@ public class PhotoCapture : MonoBehaviour
             if (!viewingPhoto && zoomScript.IsZoomed()) // Check if camera is zoomed in
             {
                 StartCoroutine(CapturePhoto());
-                StartCoroutine(CaptureStoredPhoto());
             }
             else if (viewingPhoto)
             {
@@ -56,21 +57,23 @@ public class PhotoCapture : MonoBehaviour
         screenCapture.ReadPixels(regionToRead, 0, 0, false);
         screenCapture.Apply();
         ShowPhoto();
+
+        if (IsBirdInView())
+        {
+            StorePhoto(screenCapture);
+        }
     }
-    IEnumerator CaptureStoredPhoto()
+
+    bool IsBirdInView()
     {
-        viewingPhoto = true;
-
-        yield return new WaitForEndOfFrame();
-
-        Rect regionToRead = new Rect(0, 0, Screen.width, Screen.height);
-
-        // Create a new Texture2D instance for the stored photo
-        Texture2D storedPhotoTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-
-        storedPhotoTexture.ReadPixels(regionToRead, 0, 0, false);
-        storedPhotoTexture.Apply();
-        StorePhoto(storedPhotoTexture); // Pass the captured texture to the StorePhoto method
+        foreach (BirdDetector birdDetector in birdDetectors)
+        {
+            if (birdDetector.IsBirdInView())
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     void ShowPhoto()
@@ -81,6 +84,7 @@ public class PhotoCapture : MonoBehaviour
 
         fadeInAnimation.Play("PhotoFade");
     }
+
     void StorePhoto(Texture2D photoTexture)
     {
         if (storedPhotosCount < maxStoredPhotos)
