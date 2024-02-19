@@ -1,29 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class PhotoCapture : MonoBehaviour
 {
     [Header("Photo Taker")]
     [SerializeField] private Image photoDisplayArea;
     [SerializeField] private GameObject photoFrame;
 
-    /*
-    [Header("Flash Effect")]
-    [SerializeField] private GameObject cameraFlash;
-    [SerializeField] private float flashTime;
-    */
+    [Header("Stored Photo Displays")]
+    [SerializeField] private Image[] storedPhotoDisplayAreas; // Array of stored photo displays
+    [SerializeField] private GameObject[] storedPhotoFrames; // Array of stored photo frames
+    [SerializeField] private int maxStoredPhotos = 5; // Maximum number of stored photos
 
     [Header("Photo Fader Effect")]
     [SerializeField] private Animator fadeInAnimation;
 
     private Texture2D screenCapture;
     private bool viewingPhoto;
+    private int storedPhotosCount = 0; // Count of currently stored photos
 
     private void Start()
     {
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
     }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -34,6 +35,7 @@ public class PhotoCapture : MonoBehaviour
             }
             else
             {
+                StorePhoto();
                 RemovePhoto();
             }
         }
@@ -56,24 +58,33 @@ public class PhotoCapture : MonoBehaviour
     {
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0.0f, 0.0f, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100.0f);
         photoDisplayArea.sprite = photoSprite;
-
         photoFrame.SetActive(true);
-        //StartCoroutine(CameraFlashEffect());
+
         fadeInAnimation.Play("PhotoFade");
     }
 
-    /*
-     IEnumerator CameraFlashEffect()
+    void StorePhoto()
     {
-        cameraFlash.SetActive(true);
-        yield return new WaitForSeconds(flashTime);
-        cameraFlash.SetActive(false);
+        Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0.0f, 0.0f, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100.0f);
+        if (storedPhotosCount < maxStoredPhotos)
+        {
+            storedPhotoDisplayAreas[storedPhotosCount].sprite = photoSprite;
+            storedPhotoFrames[storedPhotosCount].SetActive(true);
+
+            storedPhotosCount++;
+        }
+        else
+        {
+            Debug.LogWarning("Maximum number of stored photos reached.");
+        }
     }
-    */
+
     void RemovePhoto()
     {
         viewingPhoto = false;
         photoFrame.SetActive(false);
 
+        // Hide current photo frame
+        photoDisplayArea.sprite = null;
     }
 }
