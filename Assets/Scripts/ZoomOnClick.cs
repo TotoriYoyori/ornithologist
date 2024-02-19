@@ -7,6 +7,11 @@ public class ZoomOnClick : MonoBehaviour
 
     private bool isZoomed = false; // Flag to track whether the camera is currently zoomed in
 
+    public bool IsZoomed() // Public method to check if the camera is zoomed in
+    {
+        return isZoomed;
+    }
+
     private void Update()
     {
         // Check for right mouse button press
@@ -37,3 +42,5 @@ public class ZoomOnClick : MonoBehaviour
         }
     }
 }
+
+

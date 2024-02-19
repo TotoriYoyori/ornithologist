@@ -20,25 +20,26 @@ public class PhotoCapture : MonoBehaviour
     private Texture2D storedPhotoTexture;
     private bool viewingPhoto;
     private int storedPhotosCount = 0; // Count of currently stored photos
+    private ZoomOnClick zoomScript; // Reference to the ZoomOnClick script
 
     private void Start()
     {
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
         storedPhotoTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-
+        zoomScript = GetComponent<ZoomOnClick>(); // Get the ZoomOnClick component
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!viewingPhoto)
+            if (!viewingPhoto && zoomScript.IsZoomed()) // Check if camera is zoomed in
             {
                 StartCoroutine(CapturePhoto());
-            }
-            else
-            {
                 StartCoroutine(CaptureStoredPhoto());
+            }
+            else if (viewingPhoto)
+            {
                 RemovePhoto();
             }
         }
@@ -109,6 +110,5 @@ public class PhotoCapture : MonoBehaviour
 
         // Hide current photo frame
         photoDisplayArea.sprite = null;
-
     }
 }
