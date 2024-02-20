@@ -40,7 +40,7 @@ public class BirdPhotoController : MonoBehaviour
     {
         foreach (var birdDetector in birdDetectors)
         {
-            if (birdDetector.IsBirdInView())
+            if (birdDetector.IsAnyBirdInView())
             {
                 return true;
             }

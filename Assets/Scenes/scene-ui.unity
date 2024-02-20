@@ -140,6 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScreenX: 0.3
+  maxScreenX: 0.7
+  minScreenY: 0.3
+  maxScreenY: 0.7
 --- !u!1 &144480252
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +344,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScreenX: 0.3
+  maxScreenX: 0.7
+  minScreenY: 0.3
+  maxScreenY: 0.7
 --- !u!1 &328029837
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,6 +855,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScreenX: 0.3
+  maxScreenX: 0.7
+  minScreenY: 0.3
+  maxScreenY: 0.7
 --- !u!1 &675117966
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +952,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScreenX: 0.3
+  maxScreenX: 0.7
+  minScreenY: 0.3
+  maxScreenY: 0.7
 --- !u!1001 &704233135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3066,6 +3082,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScreenX: 0.3
+  maxScreenX: 0.7
+  minScreenY: 0.3
+  maxScreenY: 0.7
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
