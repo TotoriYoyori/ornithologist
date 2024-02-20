@@ -16,28 +16,28 @@ public class PhotoCapture : MonoBehaviour
     [Header("Photo Fader Effect")]
     [SerializeField] private Animator fadeInAnimation;
 
-    [Header("Zoom Check")]
-    [SerializeField] private ZoomOnClick zoomScript; // Reference to the ZoomOnClick script
-
-    [Header("Bird Check")]
-    [SerializeField] private BirdDetector[] birdDetectors; // Array of BirdDetector scripts
-
     private Texture2D screenCapture;
+    private Texture2D storedPhotoTexture;
     private bool viewingPhoto;
     private int storedPhotosCount = 0; // Count of currently stored photos
+    private ZoomOnClick zoomScript; // Reference to the ZoomOnClick script
 
     private void Start()
     {
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+        storedPhotoTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+        zoomScript = GetComponent<ZoomOnClick>(); // Get the ZoomOnClick component
     }
 
-    private void Update()
+   /* 
+    * private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             if (!viewingPhoto && zoomScript.IsZoomed()) // Check if camera is zoomed in
             {
                 StartCoroutine(CapturePhoto());
+                StartCoroutine(CaptureStoredPhoto());
             }
             else if (viewingPhoto)
             {
@@ -45,8 +45,8 @@ public class PhotoCapture : MonoBehaviour
             }
         }
     }
-
-    IEnumerator CapturePhoto()
+   */
+    public IEnumerator CapturePhoto()
     {
         viewingPhoto = true;
 
@@ -57,23 +57,30 @@ public class PhotoCapture : MonoBehaviour
         screenCapture.ReadPixels(regionToRead, 0, 0, false);
         screenCapture.Apply();
         ShowPhoto();
+    }
+    public IEnumerator CaptureStoredPhoto()
+    {
+        viewingPhoto = true;
 
-        if (IsBirdInView())
-        {
-            StorePhoto(screenCapture);
-        }
+        yield return new WaitForEndOfFrame();
+
+        Rect regionToRead = new Rect(0, 0, Screen.width, Screen.height);
+
+        // Create a new Texture2D instance for the stored photo
+        Texture2D storedPhotoTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+
+        storedPhotoTexture.ReadPixels(regionToRead, 0, 0, false);
+        storedPhotoTexture.Apply();
+        StorePhoto(storedPhotoTexture); // Pass the captured texture to the StorePhoto method
     }
 
-    bool IsBirdInView()
+    public IEnumerator RemoveShowedPhoto()
     {
-        foreach (BirdDetector birdDetector in birdDetectors)
-        {
-            if (birdDetector.IsBirdInView())
-            {
-                return true;
-            }
-        }
-        return false;
+        viewingPhoto = false;
+        
+        yield return new WaitForEndOfFrame();
+
+        RemovePhoto();
     }
 
     void ShowPhoto()
@@ -84,7 +91,6 @@ public class PhotoCapture : MonoBehaviour
 
         fadeInAnimation.Play("PhotoFade");
     }
-
     void StorePhoto(Texture2D photoTexture)
     {
         if (storedPhotosCount < maxStoredPhotos)
@@ -109,7 +115,7 @@ public class PhotoCapture : MonoBehaviour
 
     void RemovePhoto()
     {
-        viewingPhoto = false;
+        
         photoFrame.SetActive(false);
 
         // Hide current photo frame
