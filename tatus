@@ -1,0 +1,35 @@
+* [33mcommit 1dbf0858599019cab725c0e3e345c160684234a5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mtest-gabriel[m[33m)[m
+[31m|[m Author: Stan Nguyen <stan.mng@gmail.com>
+[31m|[m Date:   Sun Feb 18 03:51:50 2024 +0100
+[31m|[m 
+[31m|[m     set up dual cameras and two separate game scenes, zoomed in and out for bird paradise
+[31m|[m 
+* [33mcommit 37985023be3a5cde18587ed3bb218a4eda2cef9e[m
+[31m|[m Author: Stan Nguyen <stan.mng@gmail.com>
+[31m|[m Date:   Sun Feb 18 02:45:51 2024 +0100
+[31m|[m 
+[31m|[m     Creating bird paradise and importing assets for paradise
+[31m|[m 
+* [33mcommit 49975641ee43052924e50efd503f0ae7db5a18ee[m[33m ([m[1;31morigin/mechanics-ui[m[33m)[m
+[31m|[m Author: gabriele.stasi <gabriele.stasi.7903@student.uu.se>
+[31m|[m Date:   Sat Feb 17 17:51:58 2024 +0100
+[31m|[m 
+[31m|[m     polaroid snapping and animation
+[31m|[m 
+* [33mcommit e2bc93549f4ccab213600ac61a385e7384e21909[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+[31m|[m Author: Stan Nguyen <89681094+TotoriYoyori@users.noreply.github.com>
+[31m|[m Date:   Fri Feb 16 19:52:50 2024 +0100
+[31m|[m 
+[31m|[m     Create README.md
+[31m|[m 
+* [33mcommit 47cf6b7553fec36a4b1f88de636d66d97896dc15[m
+  Author: Stan Nguyen <stan.mng@gmail.com>
+  Date:   Fri Feb 16 19:48:14 2024 +0100
+  
+      initial setup, including scene-demo for stan's mockup level
+  
+* [33mcommit 568cc6a07159447ec60c32ebf8c4b54d8354f632[m[33m ([m[1;31morigin/main[m[33m)[m
+  Author: Stan Nguyen <89681094+TotoriYoyori@users.noreply.github.com>
+  Date:   Fri Feb 16 19:49:54 2024 +0100
+  
+      Initial commit
