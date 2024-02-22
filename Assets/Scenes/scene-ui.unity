@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1026692985}
-  zoomFactor: 5
+  smoothSpeed: 2
 --- !u!114 &745289819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,7 +1698,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 24.514925
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
