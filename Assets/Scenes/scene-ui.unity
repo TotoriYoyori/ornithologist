@@ -460,7 +460,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 1080, y: 720}
+  m_SizeDelta: {x: 1300, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &394689108
 Animator:
@@ -1266,6 +1266,7 @@ GameObject:
   - component: {fileID: 745289816}
   - component: {fileID: 745289818}
   - component: {fileID: 745289819}
+  - component: {fileID: 745289820}
   m_Layer: 5
   m_Name: PhotoManager
   m_TagString: Untagged
@@ -1352,6 +1353,22 @@ MonoBehaviour:
   - {fileID: 25271907}
   - {fileID: 701979984}
   zoomOnClick: {fileID: 745289818}
+--- !u!114 &745289820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745289815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95970759d916c574aa6373260393664f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1026692985}
+  zoomOnClick: {fileID: 745289818}
+  scrollSpeed: 5
+  edgeScrollSize: 100
 --- !u!1 &811061183
 GameObject:
   m_ObjectHideFlags: 0
