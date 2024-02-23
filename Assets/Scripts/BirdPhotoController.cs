@@ -16,17 +16,20 @@ public class BirdPhotoController : MonoBehaviour
             
             if (!viewingPhoto && zoomOnClick.IsZoomed())
             {
-                viewingPhoto = true;
-                photoCapture.StartCoroutine(photoCapture.HideCamera());
-                photoCapture.StartCoroutine(photoCapture.CapturePhoto());
+                if(!zoomOnClick.IsZooming())
+                {
+                    viewingPhoto = true;
+                    photoCapture.StartCoroutine(photoCapture.HideCamera());
+                    photoCapture.StartCoroutine(photoCapture.CapturePhoto());
 
-                if (IsAnyBirdInView())
-                {
-                    photoCapture.StartCoroutine(photoCapture.CaptureStoredPhoto());
-                }
-                else
-                {
-                    Debug.LogWarning("No bird in view. Photo not captured.");
+                    if (IsAnyBirdInView())
+                    {
+                        photoCapture.StartCoroutine(photoCapture.CaptureStoredPhoto());
+                    }
+                    else
+                    {
+                        Debug.LogWarning("No bird in view. Photo not captured.");
+                    }
                 }
             }
             else if (viewingPhoto)
