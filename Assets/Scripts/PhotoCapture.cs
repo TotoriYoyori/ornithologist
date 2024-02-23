@@ -108,7 +108,6 @@ public class PhotoCapture : MonoBehaviour
 
     void RemovePhoto()
     {
-        
         photoFrame.SetActive(false);
 
         // Hide current photo frame
@@ -121,10 +120,10 @@ public class PhotoCapture : MonoBehaviour
         {
             cameraUI.SetActive(false);
         }
-        else
-        {
-            cameraUI.SetActive(true);
-        }
+        // else
+        // {
+        //     cameraUI.SetActive(true);
+        // }
         yield return new WaitForEndOfFrame();
     }
 }
