@@ -25,6 +25,11 @@ public class ZoomOnClick : MonoBehaviour
         return isZoomed;
     }
 
+    public bool IsZooming()
+    {
+        return isZooming;
+    }
+
     private void Update()
     {
         // Check for right mouse button press
@@ -37,16 +42,16 @@ public class ZoomOnClick : MonoBehaviour
                 // Set zoom in target and size
                 zoomTargets[0] = mainCamera.transform.position;
                 zoomTargets[1] = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                isZoomed = true;
                 StartCoroutine(ZoomIn());
+                isZoomed = true;
             }
             else
             {
                 // Set zoom out target and size
                 zoomTargets[0] = mainCamera.ScreenToWorldPoint(Input.mousePosition);
                 zoomTargets[1] = mainCamera.transform.position;
-                isZoomed = false;
                 StartCoroutine(ZoomOut());
+                isZoomed = false;
             }
 
 
