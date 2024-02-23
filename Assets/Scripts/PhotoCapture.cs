@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows.WebCam;
 
 public class PhotoCapture : MonoBehaviour
 {
     [Header("Photo Taker")]
     [SerializeField] private Image photoDisplayArea;
     [SerializeField] private GameObject photoFrame;
+    [SerializeField] private GameObject cameraUI;
 
     [Header("Stored Photo Displays")]
     [SerializeField] private Image[] storedPhotoDisplayAreas; // Array of stored photo displays
@@ -29,27 +31,15 @@ public class PhotoCapture : MonoBehaviour
         zoomScript = GetComponent<ZoomOnClick>(); // Get the ZoomOnClick component
     }
 
-   /* 
-    * private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (!viewingPhoto && zoomScript.IsZoomed()) // Check if camera is zoomed in
-            {
-                StartCoroutine(CapturePhoto());
-                StartCoroutine(CaptureStoredPhoto());
-            }
-            else if (viewingPhoto)
-            {
-                RemovePhoto();
-            }
-        }
+    public bool ViewingPhoto()
+    {  
+     return viewingPhoto;
     }
-   */
+
     public IEnumerator CapturePhoto()
     {
         viewingPhoto = true;
-
+        StartCoroutine(HideCamera());
         yield return new WaitForEndOfFrame();
 
         Rect regionToRead = new Rect(0, 0, Screen.width, Screen.height);
@@ -120,5 +110,18 @@ public class PhotoCapture : MonoBehaviour
 
         // Hide current photo frame
         photoDisplayArea.sprite = null;
+    }
+
+    public IEnumerator HideCamera()
+    {
+        if (ViewingPhoto())
+        {
+            cameraUI.SetActive(false);
+        }
+        else
+        {
+            cameraUI.SetActive(true);
+        }
+        yield return new WaitForEndOfFrame();
     }
 }
