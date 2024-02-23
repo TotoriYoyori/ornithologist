@@ -24,6 +24,8 @@ public class PhotoCapture : MonoBehaviour
     private int storedPhotosCount = 0; // Count of currently stored photos
     private ZoomOnClick zoomScript; // Reference to the ZoomOnClick script
 
+    public GameObject winScreen;
+
     private void Start()
     {
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
@@ -100,6 +102,7 @@ public class PhotoCapture : MonoBehaviour
         else
         {
             Debug.LogWarning("Maximum number of stored photos reached.");
+            winScreen.SetActive(true);
         }
     }
 
