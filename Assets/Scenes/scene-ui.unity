@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 193738267}
   - component: {fileID: 193738266}
   - component: {fileID: 193738265}
+  - component: {fileID: 193738269}
   m_Layer: 5
   m_Name: CameraCanvas
   m_TagString: Untagged
@@ -268,9 +269,9 @@ Canvas:
   m_GameObject: {fileID: 193738264}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1026692985}
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -280,7 +281,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &193738268
 RectTransform:
@@ -301,6 +302,8 @@ RectTransform:
   - {fileID: 2071045327}
   - {fileID: 497731820}
   - {fileID: 1753403472}
+  - {fileID: 613356240}
+  - {fileID: 859298485}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -308,6 +311,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!210 &193738269
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193738264}
+  m_Enabled: 1
+  m_SortingLayerID: 68729013
+  m_SortingLayer: 2
+  m_SortingOrder: 100
+  m_SortAtRoot: 0
 --- !u!1 &275171778 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5771025906570419322, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
@@ -347,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 275171782}
-  currentState: 2
+  currentState: 0
   minWalkDistance: 3
   maxWalkDistance: 7
   walkSpeed: 1
@@ -1550,6 +1565,22 @@ MonoBehaviour:
   zoomOnClick: {fileID: 745289818}
   scrollSpeed: 5
   edgeScrollSize: 100
+--- !u!114 &745289821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745289815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6da35e8b7a9bd47adfe2332066c100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomOnClick: {fileID: 745289818}
+  photoCapture: {fileID: 745289816}
+  closeUpCamera: {fileID: 567833869}
+  zoomingSound: {fileID: 1086729372}
 --- !u!1001 &752667537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1825,8 +1856,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 567833870}
   - {fileID: 1086729371}
+  - {fileID: 567833870}
   m_Father: {fileID: 193738268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2167,7 +2198,7 @@ Transform:
   m_GameObject: {fileID: 1026692984}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -48.4}
+  m_LocalPosition: {x: 0, y: 0, z: -52.38}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2996,6 +3027,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 541155692848678553, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
+      propertyPath: SortingGroup
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1016560592872176999, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -3088,6 +3123,14 @@ PrefabInstance:
       propertyPath: HeadSprites.Array.data[2]
       value: 
       objectReference: {fileID: -1381065623766834176, guid: ac16d823db81ae246ad98221b267af49, type: 3}
+    - target: {fileID: 5751197058965096076, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751197058965096076, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5771025906570419322, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
       propertyPath: m_Name
       value: Chicken (2)
@@ -3103,6 +3146,22 @@ PrefabInstance:
     - target: {fileID: 6538531345337990132, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781992547309488536, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781992547309488536, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781992547309488536, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781992547309488536, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 652045681
       objectReference: {fileID: 0}
     - target: {fileID: 7091873161702838123, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
       propertyPath: m_Layer
@@ -3140,7 +3199,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6781992547309488536, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3274,7 +3334,7 @@ GameObject:
   - component: {fileID: 1753403472}
   - component: {fileID: 1753403471}
   - component: {fileID: 1753403470}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3878,9 +3938,9 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 193738268}
   - {fileID: 1026692988}
   - {fileID: 745289817}
-  - {fileID: 193738268}
   - {fileID: 1709791414}
   - {fileID: 1737915386}
   - {fileID: 1735640141}
