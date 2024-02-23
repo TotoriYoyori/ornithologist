@@ -17,59 +17,84 @@ public class BirdAnimatorController : MonoBehaviour
     public float walkSpeed = 2f; // Adjust as needed
     public float minIdleTime = 2f; // Adjust as needed
     public float maxIdleTime = 5f; // Adjust as needed
+    public float chanceToMoveRight = 0.5f; // Chance to move right
+    public float attackDuration = 2f; // Duration of attack animation
 
-    private Vector3 initialPosition;
     private bool isWalking = false;
+    private bool isMovingRight = false;
 
     private void Start()
     {
-        // Start the bird in the Walk state
-        SetState(BirdState.Walk);
-        initialPosition = transform.position;
-        isWalking = true;
-
-        // Start coroutine to check when to stop walking
-        StartCoroutine(StopWalkingAfterDistance());
+        // Start the bird in the Idle state
+        SetState(BirdState.Idle);
+        StartCoroutine(IdleState());
     }
 
-    private void Update()
+    private IEnumerator IdleState()
     {
-        // Handle transition to Idle state if necessary
-        if (isWalking && Vector3.Distance(transform.position, initialPosition) >= maxWalkDistance)
+        while (true)
         {
-            isWalking = false;
-            SetState(BirdState.Idle);
-            StartCoroutine(WaitAndStartWalking(Random.Range(minIdleTime, maxIdleTime)));
+            float randomChoice = Random.value;
+            if (randomChoice < 0.5f)
+            {
+                // Start walking
+                SetState(BirdState.Walk);
+                yield return StartCoroutine(WalkingState());
+            }
+            else
+            {
+                // Start attacking
+                SetState(BirdState.Attack);
+                yield return StartCoroutine(AttackState());
+            }
+
+            // Wait for a random idle time
+            yield return new WaitForSeconds(Random.Range(minIdleTime, maxIdleTime));
         }
     }
 
-    IEnumerator StopWalkingAfterDistance()
+    private IEnumerator WalkingState()
     {
-        // Keep walking until the distance is reached
-        while (isWalking)
+        // Set initial position and movement direction
+        Vector3 initialPosition = transform.position;
+        isWalking = true;
+        isMovingRight = Random.value < chanceToMoveRight;
+        if (isMovingRight)
+            FlipSprite();
+        else
+            FlipSprite(false);
+
+        // Move until the maximum walk distance is reached
+        while (isWalking && Vector3.Distance(transform.position, initialPosition) < maxWalkDistance)
         {
-            transform.Translate(Vector3.left * walkSpeed * Time.deltaTime);
+            // Determine movement direction
+            float moveDirection = isMovingRight ? 1f : -1f;
+            transform.Translate(Vector3.right * moveDirection * walkSpeed * Time.deltaTime);
             yield return null;
         }
+
+        // Return to the idle state after walking
+        isWalking = false;
+        SetState(BirdState.Idle);
     }
 
-    IEnumerator WaitAndStartWalking(float waitTime)
+    private IEnumerator AttackState()
     {
-        yield return new WaitForSeconds(waitTime);
-        SetState(BirdState.Walk);
-        initialPosition = transform.position;
-        isWalking = true;
-        StartCoroutine(StopWalkingAfterDistance());
+        // Play attack animation for the specified duration
+        yield return new WaitForSeconds(attackDuration);
+        SetState(BirdState.Idle);
     }
 
-    public void SetState(BirdState newState)
+    private void FlipSprite(bool flipRight = true)
+    {
+        Vector3 scale = transform.localScale;
+        scale.x = flipRight ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+        transform.localScale = scale;
+    }
+
+    private void SetState(BirdState newState)
     {
         currentState = newState;
         animator.SetInteger("State", (int)newState);
-
-        if(newState == BirdState.Walk) {
-            // Randomize the walk distance when transitioning to Walk state
-            maxWalkDistance = Random.Range(minWalkDistance, maxWalkDistance);
-        }
     }
 }
