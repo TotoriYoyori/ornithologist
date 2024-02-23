@@ -1,15 +1,33 @@
+using System.Collections;
 using UnityEngine;
 
 public class ZoomOnClick : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private float zoomFactor = 2f; // Factor by which to zoom in
+    [SerializeField] private float smoothSpeed = 0.5f; // Speed for smooth zooming
 
     private bool isZoomed = false; // Flag to track whether the camera is currently zoomed in
+    private bool isZooming = false; // Flag to track whether the camera is currently in the process of zooming
+    private Vector3[] zoomTargets; // Array to store zoom in and zoom out targets
+    private float zoomInSize = 4f; // Orthographic size for zooming in
+    private float zoomOutSize = 25f; // Orthographic size for zooming out
+
+    private void Start()
+    {
+        // Initialize zoom targets and sizes
+        zoomTargets = new Vector3[2];
+        zoomTargets[0] = mainCamera.transform.position; // Initial position
+        zoomTargets[1] = Vector3.zero; // Zoom out target position
+    }
 
     public bool IsZoomed() // Public method to check if the camera is zoomed in
     {
         return isZoomed;
+    }
+
+    public bool IsZooming()
+    {
+        return isZooming;
     }
 
     private void Update()
@@ -17,31 +35,68 @@ public class ZoomOnClick : MonoBehaviour
         // Check for right mouse button press
         if (Input.GetMouseButtonDown(1)) // 1 corresponds to the right mouse button
         {
+
+
             if (!isZoomed)
             {
-                // Get the position of the cursor in screen coordinates
-                Vector3 cursorPosition = Input.mousePosition;
-
-                // Convert screen coordinates to world coordinates at the depth of the camera
-                Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(cursorPosition.x, cursorPosition.y, mainCamera.nearClipPlane));
-
-                // Zoom in on the area around the cursor position
-                mainCamera.transform.position = new Vector3(worldPosition.x, worldPosition.y, mainCamera.transform.position.z);
-                mainCamera.orthographicSize /= zoomFactor; // Zoom in by reducing the orthographic size
-
+                // Set zoom in target and size
+                zoomTargets[0] = mainCamera.transform.position;
+                zoomTargets[1] = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                StartCoroutine(ZoomIn());
                 isZoomed = true;
             }
             else
             {
-                // Reset the camera to its original state (normal zoom level)
-                mainCamera.transform.position = new Vector3(0f, 0f, mainCamera.transform.position.z);
-                mainCamera.orthographicSize *= zoomFactor; // Reset orthographic size to original value
-
+                // Set zoom out target and size
+                zoomTargets[0] = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                zoomTargets[1] = mainCamera.transform.position;
+                StartCoroutine(ZoomOut());
                 isZoomed = false;
             }
+
+
+
+
         }
     }
+
+    IEnumerator ZoomIn()
+    {
+        float elapsedTime = 0f;
+        Vector3 startingPos = mainCamera.transform.position;
+        float startingSize = mainCamera.orthographicSize;
+
+        isZooming = true; // Set the zooming flag to true
+
+        while (elapsedTime < smoothSpeed)
+        {
+            // Interpolate position and size over time
+            mainCamera.transform.position = Vector3.Lerp(startingPos, zoomTargets[isZooming ? 1 : 0], (elapsedTime / smoothSpeed));
+            mainCamera.orthographicSize = Mathf.Lerp(startingSize, !isZooming ? zoomOutSize : zoomInSize, (elapsedTime / smoothSpeed));
+
+            elapsedTime += Time.deltaTime;
+            yield return null; // Wait for the next frame
+        }
+        isZooming = false; // Reset the zooming flag
+    }
+    IEnumerator ZoomOut()
+    {
+        float elapsedTime = 0f;
+        Vector3 startingPos = mainCamera.transform.position;
+        float startingSize = mainCamera.orthographicSize;
+
+        isZooming = true; // Set the zooming flag to true
+
+        while (elapsedTime < smoothSpeed)
+        {
+            // Interpolate position and size over time
+            mainCamera.transform.position = Vector3.Lerp(startingPos, zoomTargets[isZooming ? 0 : 1], (elapsedTime / smoothSpeed));
+            mainCamera.orthographicSize = Mathf.Lerp(startingSize, !isZooming ? zoomInSize : zoomOutSize, (elapsedTime / smoothSpeed));
+
+            elapsedTime += Time.deltaTime;
+            yield return null; // Wait for the next frame
+        }
+        isZooming = false; // Reset the zooming flag
+    }
 }
-
-
 
