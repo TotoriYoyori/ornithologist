@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,21 +25,19 @@ public class ExtraEffects : MonoBehaviour
         {
             zoomingSound.Play();
             isZoomingSoundPlaying = true;
+            closeUpCamera.SetActive(true);
         }
         else if (!zoomOnClick.IsZooming() && isZoomingSoundPlaying)
         {
             zoomingSound.Stop();
             isZoomingSoundPlaying = false;
         }
-
-        if (zoomOnClick.IsZoomed())
-        {
-            closeUpCamera.SetActive(true);
-        }
-        else
+        if (!zoomOnClick.IsZoomed())
         {
             closeUpCamera.SetActive(false);
         }
     }
+
+   
 }
 

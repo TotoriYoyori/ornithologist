@@ -40,8 +40,10 @@ public class PhotoCapture : MonoBehaviour
 
     public IEnumerator CapturePhoto()
     {
+        cameraUI.SetActive(false);
+
         viewingPhoto = true;
-        StartCoroutine(HideCamera());
+
         yield return new WaitForEndOfFrame();
 
         Rect regionToRead = new Rect(0, 0, Screen.width, Screen.height);
@@ -108,6 +110,8 @@ public class PhotoCapture : MonoBehaviour
 
     void RemovePhoto()
     {
+        cameraUI.SetActive(true);
+
         photoFrame.SetActive(false);
 
         // Hide current photo frame
