@@ -79,19 +79,21 @@ public class ZoomOnClick : MonoBehaviour
         }
         isZooming = false; // Reset the zooming flag
     }
+    
     IEnumerator ZoomOut()
     {
         float elapsedTime = 0f;
         Vector3 startingPos = mainCamera.transform.position;
         float startingSize = mainCamera.orthographicSize;
+        Vector3 targetPosition = new Vector3(0f, 0f, -62.9f); // Center of the game screen
 
         isZooming = true; // Set the zooming flag to true
 
         while (elapsedTime < smoothSpeed)
         {
             // Interpolate position and size over time
-            mainCamera.transform.position = Vector3.Lerp(startingPos, zoomTargets[isZooming ? 0 : 1], (elapsedTime / smoothSpeed));
-            mainCamera.orthographicSize = Mathf.Lerp(startingSize, !isZooming ? zoomInSize : zoomOutSize, (elapsedTime / smoothSpeed));
+            mainCamera.transform.position = Vector3.Lerp(startingPos, targetPosition, (elapsedTime / smoothSpeed));
+            mainCamera.orthographicSize = Mathf.Lerp(startingSize, zoomOutSize, (elapsedTime / smoothSpeed));
 
             elapsedTime += Time.deltaTime;
             yield return null; // Wait for the next frame
