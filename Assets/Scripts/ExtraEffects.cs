@@ -12,6 +12,7 @@ public class ExtraEffects : MonoBehaviour
     [Header("CloseUp View Effects")]
     public GameObject closeUpCamera;
     public AudioSource zoomingSound;
+    public GameObject bookButton;
 
     private bool isZoomingSoundPlaying = false;
 
@@ -32,9 +33,11 @@ public class ExtraEffects : MonoBehaviour
             zoomingSound.Stop();
             isZoomingSoundPlaying = false;
         }
+        if (zoomOnClick.IsZoomed()) bookButton.SetActive(false);
         if (!zoomOnClick.IsZoomed())
         {
             closeUpCamera.SetActive(false);
+            bookButton.SetActive(true);
         }
     }
 
