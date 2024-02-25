@@ -124,10 +124,6 @@ public class PhotoCapture : MonoBehaviour
         {
             cameraUI.SetActive(false);
         }
-        // else
-        // {
-        //     cameraUI.SetActive(true);
-        // }
         yield return new WaitForEndOfFrame();
     }
 }
