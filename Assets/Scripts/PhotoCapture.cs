@@ -155,6 +155,13 @@ public class PhotoCapture : MonoBehaviour
         {
             Debug.LogWarning("No slot range defined for bird species: " + birdSpecies);
         }
+
+        // Check if the maximum number of stored photos has been reached
+        if (storedPhotosCount >= maxStoredPhotos - 1)
+        {
+            Debug.LogWarning("Maximum number of stored photos reached.");
+            winScreen.SetActive(true);
+        }
     }
 
 
