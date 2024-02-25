@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1fdb850a0378bb54a860453fe2e96cb2, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2daafd704a0b9644c84900ffc26151a6, type: 2}
   m_Tag: 
   m_SpeedParameter: Speed
   m_MirrorParameter: 
@@ -104,7 +104,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack
+  m_Name: Play
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -119,7 +119,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5415609892bda7943a525188ea95dc00, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6871148c445ecbf4b8c2ca538f302dbf, type: 2}
   m_Tag: 
   m_SpeedParameter: Speed
   m_MirrorParameter: 
@@ -295,7 +295,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BirdAnimator
+  m_Name: CalmBirdAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack
@@ -421,7 +421,7 @@ AnimatorStateMachine:
     m_Position: {x: 300, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5799318856589999501}
-    m_Position: {x: 470, y: 30, z: 0}
+    m_Position: {x: 520, y: 50, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -1184267473307702959}
@@ -475,7 +475,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f7fd4fe12e0396f4fa85fedf2a7ef2f3, type: 2}
+  m_Motion: {fileID: 7400000, guid: d5ae6a17eb7502c44a1a2ec61b5034d2, type: 2}
   m_Tag: 
   m_SpeedParameter: Speed
   m_MirrorParameter: 
