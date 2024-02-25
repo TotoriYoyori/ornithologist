@@ -1797,7 +1797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdSpecies: Chicken
+  birdSpecies: Bird3
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3
@@ -5072,7 +5072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdSpecies: Chick
+  birdSpecies: Bird1
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3
@@ -5490,7 +5490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdSpecies: Drake
+  birdSpecies: Bird5
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3
@@ -6188,6 +6188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1026692985}
   smoothSpeed: 0.5
+  bookCanvas: {fileID: 1958765755}
 --- !u!114 &745289819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14488,7 +14489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdSpecies: Chicken
+  birdSpecies: Bird4
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3
@@ -15781,7 +15782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdSpecies: Chick
+  birdSpecies: Bird2
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3
