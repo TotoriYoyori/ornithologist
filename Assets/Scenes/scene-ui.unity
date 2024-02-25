@@ -571,6 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birdSpecies: Chicken
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3
@@ -2088,6 +2089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birdSpecies: Chick
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3
@@ -2190,6 +2192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birdSpecies: Drake
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3
@@ -2442,6 +2445,13 @@ MonoBehaviour:
   maxStoredPhotos: 8
   fadeInAnimation: {fileID: 394689108}
   winScreen: {fileID: 613356239}
+  speciesSlotRanges:
+  - speciesName: Chick
+    startSlot: 0
+    endSlot: 3
+  - speciesName: Chicken
+    startSlot: 4
+    endSlot: 7
 --- !u!224 &745289817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6073,6 +6083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birdSpecies: Chicken
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3
@@ -6497,6 +6508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birdSpecies: Chick
   minScreenX: 0.3
   maxScreenX: 0.7
   minScreenY: 0.3

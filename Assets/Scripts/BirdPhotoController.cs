@@ -13,10 +13,9 @@ public class BirdPhotoController : MonoBehaviour
         // Check if the player is trying to take a photo
         if (Input.GetMouseButtonDown(0))
         {
-            
             if (!viewingPhoto && zoomOnClick.IsZoomed())
             {
-                if(!zoomOnClick.IsZooming())
+                if (!zoomOnClick.IsZooming())
                 {
                     viewingPhoto = true;
                     photoCapture.StartCoroutine(photoCapture.HideCamera());
@@ -24,7 +23,19 @@ public class BirdPhotoController : MonoBehaviour
 
                     if (IsAnyBirdInView())
                     {
-                        photoCapture.StartCoroutine(photoCapture.CaptureStoredPhoto());
+                        // Iterate through each bird detector to find the first bird in view and capture its photo
+                        foreach (var birdDetector in birdDetectors)
+                        {
+                            if (birdDetector.IsAnyBirdInView())
+                            {
+                                // Get the bird species from the BirdDetector attached to the bird game object
+                                string birdSpecies = birdDetector.birdSpecies;
+
+                                // Capture the photo and pass the bird species
+                                photoCapture.StartCoroutine(photoCapture.CaptureStoredPhoto(birdSpecies));
+                                return; // Exit the loop after capturing the photo for the first bird found
+                            }
+                        }
                     }
                     else
                     {
@@ -42,6 +53,7 @@ public class BirdPhotoController : MonoBehaviour
 
     private bool IsAnyBirdInView()
     {
+        // Check if any bird is in view by iterating through each BirdDetector
         foreach (var birdDetector in birdDetectors)
         {
             if (birdDetector.IsAnyBirdInView())
@@ -52,4 +64,5 @@ public class BirdPhotoController : MonoBehaviour
         return false;
     }
 }
+
 

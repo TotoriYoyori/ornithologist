@@ -4,6 +4,8 @@ public class BirdDetector : MonoBehaviour
 {
     private bool isBirdInView = false;
 
+    public string birdSpecies;
+
     [Header("AcceptableBoundaries")]
     // Define the acceptable screen area for the bird
     public float minScreenX = 0.3f; // Minimum X value (left side of the screen)
