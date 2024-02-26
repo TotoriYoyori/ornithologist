@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 3902265654134548038}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10199992, y: 1.3009998, z: 0}
+  m_LocalPosition: {x: -0.02, y: 1.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -265,9 +265,11 @@ GameObject:
   - component: {fileID: 1797487778252940654}
   - component: {fileID: 4076152042055190876}
   - component: {fileID: 3535404896899698202}
+  - component: {fileID: 7921262299618343712}
+  - component: {fileID: 7973507406431746523}
   m_Layer: 0
   m_Name: whitetailed-eagle
-  m_TagString: Untagged
+  m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,7 +300,7 @@ Animator:
   m_GameObject: {fileID: 5923401707093281111}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e09e63c9111c49b468fa24826028d51e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 04672fcd32720c243865ee2e032077b8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -365,6 +367,38 @@ MonoBehaviour:
   - {fileID: 7130993010582082712}
   - {fileID: 1137273456668441062}
   - {fileID: 0}
+--- !u!114 &7921262299618343712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5923401707093281111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17da2a5decd555f4887ef4957aaaa538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdSpecies: Bird8
+  minScreenX: 0.3
+  maxScreenX: 0.7
+  minScreenY: 0.3
+  maxScreenY: 0.7
+--- !u!114 &7973507406431746523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5923401707093281111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e6cd3debc6c5341818dd682726a5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1797487778252940654}
+  currentState: 0
+  flySpeed: 15
 --- !u!1 &6131182453297221300
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +512,7 @@ Transform:
   m_GameObject: {fileID: 6347915075038334765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.76, y: 1.33, z: 0}
+  m_LocalPosition: {x: 0.64, y: 1.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

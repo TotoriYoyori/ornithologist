@@ -25,11 +25,16 @@ public class AquaticBirdBehavior : MonoBehaviour
     private bool isFirstWalk = true; // Track if it's the first walk
     private Vector3 centerPosition; // Center of the game scene
 
+    private BirdSpawner spawner; // Reference to the BirdSpawner script
+
     private void Start()
     {
         // Get the center position of the game scene
         centerPosition = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         centerPosition = Camera.main.ScreenToWorldPoint(centerPosition);
+
+        // Find the BirdSpawner script
+        spawner = FindObjectOfType<BirdSpawner>();
 
         // Start the bird in the Idle state
         SetState(AquaticBirdState.Idle);
@@ -117,8 +122,14 @@ public class AquaticBirdBehavior : MonoBehaviour
             yield return null;
         }
 
-        // After reaching the destination, deactivate the bird game object
-        gameObject.SetActive(false);
+        // After reaching the destination, destroy the bird GameObject
+        Destroy(gameObject);
+
+        // Call the DecreaseBirdCount method in the spawner
+        if (spawner != null)
+        {
+            spawner.DecreaseBirdCount();
+        }
     }
 
     private void FlipSprite(bool flipRight)

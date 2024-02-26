@@ -12,10 +12,15 @@ public class FlyingBirdBehavior : MonoBehaviour
     public FlyingBirdState currentState = FlyingBirdState.Fly;
     public float flySpeed = 10f; // Adjust as needed
 
+    private BirdSpawner spawner; // Reference to the BirdSpawner script
+
     private Vector3 centerPosition; // Center of the game scene
 
     private void Start()
     {
+        // Find the BirdSpawner script
+        spawner = FindObjectOfType<BirdSpawner>();
+
         // Get the center position of the game scene
         centerPosition = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         centerPosition = Camera.main.ScreenToWorldPoint(centerPosition);
@@ -42,8 +47,14 @@ public class FlyingBirdBehavior : MonoBehaviour
             yield return null;
         }
 
-        // After reaching the destination, deactivate the bird game object
-        gameObject.SetActive(false);
+        // After reaching the destination, destroy the bird game object
+        Destroy(gameObject);
+
+        // Call the DecreaseBirdCount method in the spawner
+        if (spawner != null)
+        {
+            spawner.DecreaseBirdCount();
+        }
     }
 
     private void FlipSprite(bool flipRight)
