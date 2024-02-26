@@ -34,7 +34,7 @@ public class ZoomOnClick : MonoBehaviour
     private void Update()
     {
         // Check for right mouse button press
-        if (Input.GetMouseButtonDown(1)) // 1 corresponds to the right mouse button
+        if (Input.GetMouseButtonDown(1) && !isZooming) // 1 corresponds to the right mouse button
         {
             bookCanvas.SetActive(false);
 
