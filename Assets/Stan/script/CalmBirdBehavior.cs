@@ -25,10 +25,14 @@ public class CalmBirdBehavior : MonoBehaviour
     private bool isWalking = false;
     private bool isMovingRight = false;
     private bool isFirstWalk = true; // Track if it's the first walk
-    private bool isFirstWalkRight = false; // Track if the first walk is to the right
+    private Vector3 centerPosition; // Center of the game scene
 
     private void Start()
     {
+        // Get the center position of the game scene
+        centerPosition = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        centerPosition = Camera.main.ScreenToWorldPoint(centerPosition);
+        
         // Start the bird in the Idle state
         SetState(CalmBirdState.Idle);
         StartCoroutine(IdleState());
@@ -40,9 +44,13 @@ public class CalmBirdBehavior : MonoBehaviour
         {
             if (isFirstWalk)
             {
-                // Always walk first towards the right when the game starts
+                // Determine the direction towards the center of the screen
+                isMovingRight = transform.position.x < centerPosition.x;
+                
+                // Set isFirstWalk to false
                 isFirstWalk = false;
-                isFirstWalkRight = true;
+                
+                // Start walking
                 SetState(CalmBirdState.Walk);
                 yield return StartCoroutine(WalkingState());
             }
@@ -84,16 +92,6 @@ public class CalmBirdBehavior : MonoBehaviour
         Vector3 initialPosition = transform.position;
         isWalking = true;
 
-        if (isFirstWalk && isFirstWalkRight)
-        {
-            isMovingRight = true;
-            isFirstWalkRight = false;
-        }
-        else
-        {
-            isMovingRight = Random.value < chanceToMoveRight;
-        }
-
         // Flip the sprite based on movement direction
         FlipSprite(isMovingRight);
 
@@ -120,12 +118,22 @@ public class CalmBirdBehavior : MonoBehaviour
 
     private IEnumerator ScatterState()
     {
-        // Move the bird a great distance (outside of game bound) and then disappear
-        Vector3 destination = transform.position + (isMovingRight ? Vector3.right : Vector3.left) * 100f; // Move up high
+        // Define the destination coordinate outside of the game screen
+        Vector2 destination = new Vector2(50f, 20f); // Example destination outside of the game screen
+
+        // Determine the movement direction
+        bool moveRight = destination.x > transform.position.x;
+
+        // Flip the sprite based on the movement direction
+        FlipSprite(moveRight);
+
+        // Move the bird towards the destination
         float scatterSpeed = walkSpeed * 25f; // Speed for scatter
-        while (Vector3.Distance(transform.position, destination) > 0.1f)
+        while (Vector2.Distance(transform.position, destination) > 0.1f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, destination, scatterSpeed * Time.deltaTime);
+            // Move the bird towards the destination
+            transform.position = Vector2.MoveTowards(transform.position, destination, scatterSpeed * Time.deltaTime);
+
             yield return null;
         }
 
