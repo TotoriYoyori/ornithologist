@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 8863195465049925474}
   - component: {fileID: 5383763103230969480}
   - component: {fileID: 8166216340855554990}
+  - component: {fileID: -7742314922961614103}
   m_Layer: 0
   m_Name: eurasian-wigeon
   m_TagString: Bird
@@ -490,3 +491,15 @@ MonoBehaviour:
   maxIdleTime: 5
   chanceToMoveRight: 0.5
   scatterSpeed: 25
+--- !u!210 &-7742314922961614103
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784775609529459458}
+  m_Enabled: 1
+  m_SortingLayerID: 68729013
+  m_SortingLayer: 2
+  m_SortingOrder: 19
+  m_SortAtRoot: 0
