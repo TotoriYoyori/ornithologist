@@ -168,8 +168,8 @@ TextureImporter:
       name: horned grebe_2
       rect:
         serializedVersion: 2
-        x: 58
-        y: 315
+        x: 56
+        y: 282
         width: 266
         height: 94
       alignment: 0
@@ -189,8 +189,8 @@ TextureImporter:
       name: horned grebe_3
       rect:
         serializedVersion: 2
-        x: 333
-        y: 29
+        x: 391
+        y: 18
         width: 407
         height: 403
       alignment: 0
@@ -202,6 +202,27 @@ TextureImporter:
       bones: []
       spriteID: 34348426c25013644ad44b5692dcda51
       internalID: -1327278906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: horned grebe_4
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 78
+        width: 108
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106c4c6918fe3bf4cad68d6e91fcbb21
+      internalID: -1716481431
       vertices: []
       indices: 
       edges: []
@@ -221,6 +242,7 @@ TextureImporter:
       horned grebe_1: 479351759
       horned grebe_2: 930986888
       horned grebe_3: -1327278906
+      horned grebe_4: -1716481431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
