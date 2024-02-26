@@ -660,3 +660,4 @@ MonoBehaviour:
   maxIdleTime: 5
   chanceToMoveRight: 0.5
   attackDuration: 2
+  scatterChance: 0.5
