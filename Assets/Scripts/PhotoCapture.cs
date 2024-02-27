@@ -1,7 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Windows.WebCam;
 
 public class PhotoCapture : MonoBehaviour
 {
@@ -26,11 +26,30 @@ public class PhotoCapture : MonoBehaviour
 
     public GameObject winScreen;
 
+    private Dictionary<string, int[]> speciesToSlotRange = new Dictionary<string, int[]>(); // Dictionary to map bird species to slot ranges
+    private Dictionary<string, int> speciesToCurrentSlotIndex = new Dictionary<string, int>(); // Dictionary to track current slot index for each bird species
+
+    [Header("Bird Slot Allocation")]
+    [SerializeField] private SpeciesSlotRange[] speciesSlotRanges; // Serialized field to define slot ranges for each species
+    [System.Serializable]
+    public class SpeciesSlotRange
+    {
+        public string speciesName;
+        public int startSlot;
+        public int endSlot;
+    }
+
+
+
     private void Start()
     {
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
         storedPhotoTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
         zoomScript = GetComponent<ZoomOnClick>(); // Get the ZoomOnClick component
+
+        InitializeSpeciesToCurrentSlotIndex(); // Initialize the species to current slot index dictionary
+        InitializeSpeciesToSlotRange();
+
     }
 
     public bool ViewingPhoto()
@@ -40,8 +59,10 @@ public class PhotoCapture : MonoBehaviour
 
     public IEnumerator CapturePhoto()
     {
+        cameraUI.SetActive(false);
+
         viewingPhoto = true;
-        StartCoroutine(HideCamera());
+
         yield return new WaitForEndOfFrame();
 
         Rect regionToRead = new Rect(0, 0, Screen.width, Screen.height);
@@ -50,7 +71,7 @@ public class PhotoCapture : MonoBehaviour
         screenCapture.Apply();
         ShowPhoto();
     }
-    public IEnumerator CaptureStoredPhoto()
+    public IEnumerator CaptureStoredPhoto(string birdSpecies)
     {
         viewingPhoto = true;
 
@@ -63,7 +84,7 @@ public class PhotoCapture : MonoBehaviour
 
         storedPhotoTexture.ReadPixels(regionToRead, 0, 0, false);
         storedPhotoTexture.Apply();
-        StorePhoto(storedPhotoTexture); // Pass the captured texture to the StorePhoto method
+        StorePhoto(storedPhotoTexture, birdSpecies); // Pass the captured texture to the StorePhoto method
     }
 
     public IEnumerator RemoveShowedPhoto()
@@ -83,31 +104,71 @@ public class PhotoCapture : MonoBehaviour
 
         fadeInAnimation.Play("PhotoFade");
     }
-    void StorePhoto(Texture2D photoTexture)
+    void StorePhoto(Texture2D photoTexture, string birdSpecies)
     {
-        if (storedPhotosCount < maxStoredPhotos)
+        if (speciesToSlotRange.ContainsKey(birdSpecies)) // Check if the species has a defined slot range
         {
-            // Create a sprite from the new texture
-            Sprite photoSprite = Sprite.Create(photoTexture, new Rect(0.0f, 0.0f, photoTexture.width, photoTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
+            var slotRange = speciesToSlotRange[birdSpecies]; // Get the slot range for the bird species
 
-            // Assign the sprite to the current stored photo display area
-            storedPhotoDisplayAreas[storedPhotosCount].sprite = photoSprite;
+            if (slotRange != null && slotRange.Length >= 2)
+            {
+                int startSlot = slotRange[0];
+                int endSlot = slotRange[1];
 
-            // Activate the corresponding stored photo frame
-            storedPhotoFrames[storedPhotosCount].SetActive(true);
+                if (startSlot >= 0 && startSlot < maxStoredPhotos)
+                {
+                    int currentSlotIndex = GetNextAvailableSlotIndex(birdSpecies, startSlot, endSlot);
 
-            // Increment the count of stored photos
-            storedPhotosCount++;
+                    // Check if the current slot index is within the specified range
+                    if (currentSlotIndex >= startSlot && currentSlotIndex <= endSlot)
+                    {
+                        Sprite photoSprite = Sprite.Create(photoTexture, new Rect(0.0f, 0.0f, photoTexture.width, photoTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+                        storedPhotoDisplayAreas[currentSlotIndex].sprite = photoSprite;
+                        storedPhotoFrames[currentSlotIndex].SetActive(true);
+
+                        // Update the current slot index for the bird species
+                        speciesToCurrentSlotIndex[birdSpecies] = currentSlotIndex;
+
+                        // Increment the count of stored photos if necessary
+                        if (currentSlotIndex == storedPhotosCount)
+                        {
+                            storedPhotosCount++;
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("No available slots in the specified range for bird species: " + birdSpecies);
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("Invalid start slot index for bird species: " + birdSpecies);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Invalid slot range for bird species: " + birdSpecies);
+            }
         }
         else
+        {
+            Debug.LogWarning("No slot range defined for bird species: " + birdSpecies);
+        }
+
+        // Check if the maximum number of stored photos has been reached
+        if (storedPhotosCount >= maxStoredPhotos - 1)
         {
             Debug.LogWarning("Maximum number of stored photos reached.");
             winScreen.SetActive(true);
         }
     }
 
+
     void RemovePhoto()
     {
+        cameraUI.SetActive(true);
+
         photoFrame.SetActive(false);
 
         // Hide current photo frame
@@ -120,10 +181,43 @@ public class PhotoCapture : MonoBehaviour
         {
             cameraUI.SetActive(false);
         }
-        // else
-        // {
-        //     cameraUI.SetActive(true);
-        // }
         yield return new WaitForEndOfFrame();
+    }
+
+    private int GetNextAvailableSlotIndex(string birdSpecies, int startSlot, int endSlot)
+    {
+        if (!speciesToCurrentSlotIndex.ContainsKey(birdSpecies))
+        {
+            speciesToCurrentSlotIndex[birdSpecies] = startSlot;
+            return startSlot;
+        }
+
+        int currentSlotIndex = speciesToCurrentSlotIndex[birdSpecies] + 1;
+
+        // If the current slot index exceeds the end slot, wrap around to the start slot
+        if (currentSlotIndex > endSlot)
+        {
+            currentSlotIndex = startSlot;
+        }
+
+        return currentSlotIndex;
+    }
+
+    private void InitializeSpeciesToCurrentSlotIndex()
+    {
+        // Initialize current slot index for each bird species to the start of their slot range
+        foreach (var pair in speciesToSlotRange)
+        {
+            speciesToCurrentSlotIndex[pair.Key] = pair.Value[0];
+        }
+    }
+
+    private void InitializeSpeciesToSlotRange()
+    {
+        // Initialize species to slot range dictionary from serialized fields
+        foreach (var range in speciesSlotRanges)
+        {
+            speciesToSlotRange[range.speciesName] = new int[] { range.startSlot, range.endSlot };
+        }
     }
 }

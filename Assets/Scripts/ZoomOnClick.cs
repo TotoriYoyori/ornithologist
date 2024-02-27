@@ -5,6 +5,7 @@ public class ZoomOnClick : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
     [SerializeField] private float smoothSpeed = 0.5f; // Speed for smooth zooming
+    [SerializeField] private GameObject bookCanvas;
 
     private bool isZoomed = false; // Flag to track whether the camera is currently zoomed in
     private bool isZooming = false; // Flag to track whether the camera is currently in the process of zooming
@@ -33,9 +34,9 @@ public class ZoomOnClick : MonoBehaviour
     private void Update()
     {
         // Check for right mouse button press
-        if (Input.GetMouseButtonDown(1)) // 1 corresponds to the right mouse button
+        if (Input.GetMouseButtonDown(1) && !isZooming) // 1 corresponds to the right mouse button
         {
-
+            bookCanvas.SetActive(false);
 
             if (!isZoomed)
             {
