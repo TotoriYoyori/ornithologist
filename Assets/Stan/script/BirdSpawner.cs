@@ -19,9 +19,9 @@ public class BirdSpawner : MonoBehaviour
     public int maxBirds = 10;
 
     private int totalRarity;
-    private int currentBirds = 0; // Track the current number of birds on the field
+    private int currentBirds = 0; 
 
-    private BirdPhotoController birdPhotoController; // Reference to BirdPhotoController
+    private BirdPhotoController birdPhotoController; 
 
     private void Start()
     {
@@ -50,9 +50,8 @@ public class BirdSpawner : MonoBehaviour
             Shuffle(spawnZones);
 
             // Determine the number of spawn zones to activate at this interval
-            int activeSpawnZones = Mathf.Min(Random.Range(1, 5), spawnZones.Length); // Randomly select 1 or 2 spawn zones
+            int activeSpawnZones = Mathf.Min(Random.Range(1, 5), spawnZones.Length); 
 
-            // Iterate through the randomly selected active spawn zones
             for (int i = 0; i < activeSpawnZones; i++)
             {
                 Transform spawnZone = spawnZones[i];
@@ -76,9 +75,8 @@ public class BirdSpawner : MonoBehaviour
                 {
                     GameObject spawnedBird = Instantiate(birdPrefabToSpawn, spawnZone.position, Quaternion.identity);
                     spawnedBird.transform.parent = transform;
-                    currentBirds++; // Increment the current number of birds
+                    currentBirds++; 
 
-                    // Get the BirdDetector component and add it to the BirdPhotoController
                     BirdDetector birdDetector = spawnedBird.GetComponent<BirdDetector>();
                     if (birdDetector != null && birdPhotoController != null)
                     {
@@ -100,7 +98,6 @@ public class BirdSpawner : MonoBehaviour
         }
     }
 
-    // Method to decrease the current number of birds
     public void DecreaseBirdCount()
     {
         currentBirds--;
