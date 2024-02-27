@@ -607,6 +607,7 @@ GameObject:
   - component: {fileID: 8863195465049925474}
   - component: {fileID: 5383763103230969480}
   - component: {fileID: 3599484087031784813}
+  - component: {fileID: 2155972979100749683}
   m_Layer: 0
   m_Name: common-crane
   m_TagString: Bird
@@ -747,3 +748,15 @@ MonoBehaviour:
   chanceToMoveRight: 0.5
   attackDuration: 2
   scatterChance: 0.25
+--- !u!210 &2155972979100749683
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784775609529459458}
+  m_Enabled: 1
+  m_SortingLayerID: 68729013
+  m_SortingLayer: 2
+  m_SortingOrder: 20
+  m_SortAtRoot: 0

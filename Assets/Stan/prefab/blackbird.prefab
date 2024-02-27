@@ -522,6 +522,7 @@ GameObject:
   - component: {fileID: 8863195465049925474}
   - component: {fileID: 5383763103230969480}
   - component: {fileID: 2653590219418531631}
+  - component: {fileID: -7407818525267142334}
   m_Layer: 0
   m_Name: blackbird
   m_TagString: Bird
@@ -661,3 +662,15 @@ MonoBehaviour:
   chanceToMoveRight: 0.5
   attackDuration: 2
   scatterChance: 0.5
+--- !u!210 &-7407818525267142334
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784775609529459458}
+  m_Enabled: 1
+  m_SortingLayerID: 68729013
+  m_SortingLayer: 2
+  m_SortingOrder: 22
+  m_SortAtRoot: 0

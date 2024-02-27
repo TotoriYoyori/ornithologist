@@ -522,6 +522,7 @@ GameObject:
   - component: {fileID: 8863195465049925474}
   - component: {fileID: 5383763103230969480}
   - component: {fileID: 3850557654954662344}
+  - component: {fileID: 1844509854634341644}
   m_Layer: 0
   m_Name: green-shank
   m_TagString: Bird
@@ -661,3 +662,15 @@ MonoBehaviour:
   chanceToMoveRight: 0.5
   attackDuration: 1
   scatterChance: 0.75
+--- !u!210 &1844509854634341644
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784775609529459458}
+  m_Enabled: 1
+  m_SortingLayerID: 68729013
+  m_SortingLayer: 2
+  m_SortingOrder: 20
+  m_SortAtRoot: 0
