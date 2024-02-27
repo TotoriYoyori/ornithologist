@@ -1,9 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BirdPhotoController : MonoBehaviour
 {
     [SerializeField] private PhotoCapture photoCapture; // Reference to the PhotoCapture script
-    [SerializeField] private BirdDetector[] birdDetectors; // Reference to the BirdDetector scripts
+    private List<BirdDetector> birdDetectors = new List<BirdDetector>(); // Reference to the BirdDetector scripts
     [SerializeField] private ZoomOnClick zoomOnClick; //Reference to the ZoomOnClick script
 
     private bool viewingPhoto = false; // Flag to track whether a photo is currently being taken
@@ -63,6 +64,11 @@ public class BirdPhotoController : MonoBehaviour
         }
         return false;
     }
+
+    // Method to add a BirdDetector reference
+    public void AddBirdDetector(BirdDetector birdDetector)
+    {
+        birdDetectors.Add(birdDetector);
+        Debug.Log("Added BirdDetector: " + birdDetector.gameObject.name);
+    }
 }
-
-

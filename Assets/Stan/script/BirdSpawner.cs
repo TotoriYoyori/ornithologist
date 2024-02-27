@@ -18,13 +18,15 @@ public class BirdSpawner : MonoBehaviour
     public float spawnInterval = 5f;
     public int maxBirds = 10;
 
-    [SerializeField]
+    private int totalRarity;
     private int currentBirds = 0; // Track the current number of birds on the field
 
-    private int totalRarity;
+    private BirdPhotoController birdPhotoController; // Reference to BirdPhotoController
 
     private void Start()
     {
+        birdPhotoController = FindObjectOfType<BirdPhotoController>(); // Find BirdPhotoController in the scene
+
         foreach (var birdSpawnInfo in birdSpawnInfoList)
         {
             totalRarity += birdSpawnInfo.rarityPercentage;
@@ -62,7 +64,7 @@ public class BirdSpawner : MonoBehaviour
                 foreach (var birdSpawnInfo in birdSpawnInfoList)
                 {
                     cumulativeRarity += birdSpawnInfo.rarityPercentage;
-                    
+
                     if (randomValue < cumulativeRarity && birdSpawnInfo.allowedSpawnZones.Contains(spawnZone.name))
                     {
                         birdPrefabToSpawn = birdSpawnInfo.birdPrefab;
@@ -75,6 +77,13 @@ public class BirdSpawner : MonoBehaviour
                     GameObject spawnedBird = Instantiate(birdPrefabToSpawn, spawnZone.position, Quaternion.identity);
                     spawnedBird.transform.parent = transform;
                     currentBirds++; // Increment the current number of birds
+
+                    // Get the BirdDetector component and add it to the BirdPhotoController
+                    BirdDetector birdDetector = spawnedBird.GetComponent<BirdDetector>();
+                    if (birdDetector != null && birdPhotoController != null)
+                    {
+                        birdPhotoController.AddBirdDetector(birdDetector);
+                    }
                 }
             }
         }

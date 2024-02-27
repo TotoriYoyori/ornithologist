@@ -1010,7 +1010,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 184565605}
-  - component: {fileID: 184565606}
   - component: {fileID: 184565607}
   m_Layer: 0
   m_Name: birds
@@ -1034,18 +1033,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!210 &184565606
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184565604}
-  m_Enabled: 0
-  m_SortingLayerID: 68729013
-  m_SortingLayer: 2
-  m_SortingOrder: 20
-  m_SortAtRoot: 0
 --- !u!114 &184565607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,7 +1101,6 @@ MonoBehaviour:
     - SpawnAir2
   spawnInterval: 10
   maxBirds: 5
-  currentBirds: 0
 --- !u!1 &185201011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6433,15 +6419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photoCapture: {fileID: 745289816}
-  birdDetectors:
-  - {fileID: 5383763103230969480, guid: e2187674534d3934d9792ed09f9c8b1a, type: 3}
-  - {fileID: 5383763103230969480, guid: f9cc780392bb93a4ab8650f993758f39, type: 3}
-  - {fileID: 5383763103230969480, guid: b37db783459e79440963bd85484e739b, type: 3}
-  - {fileID: 5383763103230969480, guid: 1a059afc640d3b346bffb5ef307755f0, type: 3}
-  - {fileID: 5383763103230969480, guid: 8ef7010464e305e4f8194d6944d6ba70, type: 3}
-  - {fileID: 5383763103230969480, guid: 4d04d138088c0264699550f5661afdf7, type: 3}
-  - {fileID: 5383763103230969480, guid: 759f89f3cdb9f334fac3ceee012be35a, type: 3}
-  - {fileID: 7921262299618343712, guid: d9eb2a611021b8b498958eb5846826b5, type: 3}
   zoomOnClick: {fileID: 745289818}
 --- !u!114 &745289820
 MonoBehaviour:
@@ -6487,7 +6464,7 @@ PrefabInstance:
     - target: {fileID: 541155692848678553, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
       propertyPath: SortingGroup
       value: 
-      objectReference: {fileID: 184565606}
+      objectReference: {fileID: 0}
     - target: {fileID: 1016560592872176999, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -9424,7 +9401,7 @@ PrefabInstance:
     - target: {fileID: 1211699911956097999, guid: 99e071b4b80df204999471650ea2b760, type: 3}
       propertyPath: SortingGroup
       value: 
-      objectReference: {fileID: 184565606}
+      objectReference: {fileID: 0}
     - target: {fileID: 1423470162059733985, guid: 99e071b4b80df204999471650ea2b760, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -12773,7 +12750,7 @@ PrefabInstance:
     - target: {fileID: 541155692848678553, guid: bb53af76b39682941931e3d95dbae2c2, type: 3}
       propertyPath: SortingGroup
       value: 
-      objectReference: {fileID: 184565606}
+      objectReference: {fileID: 0}
     - target: {fileID: 1016560592872176999, guid: bb53af76b39682941931e3d95dbae2c2, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -13004,7 +12981,7 @@ PrefabInstance:
     - target: {fileID: 541155692848678553, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
       propertyPath: SortingGroup
       value: 
-      objectReference: {fileID: 184565606}
+      objectReference: {fileID: 0}
     - target: {fileID: 541155692848678553, guid: b9d32bdf7741c4e4f89c1b22a0e1077d, type: 3}
       propertyPath: Sprites.Array.size
       value: 6
@@ -13240,7 +13217,7 @@ PrefabInstance:
     - target: {fileID: 541155692848678553, guid: bb53af76b39682941931e3d95dbae2c2, type: 3}
       propertyPath: SortingGroup
       value: 
-      objectReference: {fileID: 184565606}
+      objectReference: {fileID: 0}
     - target: {fileID: 1016560592872176999, guid: bb53af76b39682941931e3d95dbae2c2, type: 3}
       propertyPath: m_Layer
       value: 0
