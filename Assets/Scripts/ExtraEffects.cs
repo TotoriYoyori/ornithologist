@@ -8,6 +8,7 @@ public class ExtraEffects : MonoBehaviour
 {
     [SerializeField] ZoomOnClick zoomOnClick;
     [SerializeField] PhotoCapture photoCapture;
+    [SerializeField] BirdPhotoController birdPhotoController;
 
     [Header("CloseUp View Effects")]
     public GameObject closeUpCamera;

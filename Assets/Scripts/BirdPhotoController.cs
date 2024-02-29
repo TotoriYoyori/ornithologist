@@ -8,6 +8,8 @@ public class BirdPhotoController : MonoBehaviour
     [SerializeField] private ZoomOnClick zoomOnClick; //Reference to the ZoomOnClick script
     [SerializeField] private PauseGame pauseManager;
 
+    public AudioSource printSound;
+
     private bool viewingPhoto = false; // Flag to track whether a photo is currently being taken
 
     private void Update()
@@ -37,7 +39,9 @@ public class BirdPhotoController : MonoBehaviour
                                     string birdSpecies = birdDetector.birdSpecies;
 
                                     // Capture the photo and pass the bird species
+
                                     photoCapture.StartCoroutine(photoCapture.CaptureStoredPhoto(birdSpecies));
+                                    printSound.Play();
                                     return; // Exit the loop after capturing the photo for the first bird found
                                 }
                             }
@@ -57,7 +61,7 @@ public class BirdPhotoController : MonoBehaviour
         }
     }
 
-    private bool IsAnyBirdInView()
+    public bool IsAnyBirdInView()
     {
         // Check if any bird is in view by iterating through each BirdDetector
         foreach (var birdDetector in birdDetectors)
