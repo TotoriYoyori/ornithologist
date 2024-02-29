@@ -5,6 +5,11 @@ public class PauseGame : MonoBehaviour
     public GameObject pauseScreen; // Public variable for the object to be activated during pause
     private bool isPaused = false;
 
+
+    public bool IsPaused()
+    {
+        return isPaused;
+    }
     void Update()
     {
         // Check for Esc key press

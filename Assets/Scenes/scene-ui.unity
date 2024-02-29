@@ -8982,6 +8982,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1026692985}
   smoothSpeed: 0.5
   bookCanvas: {fileID: 1958765755}
+  pauseManager: {fileID: 146231478}
 --- !u!114 &745289819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8996,6 +8997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photoCapture: {fileID: 745289816}
   zoomOnClick: {fileID: 745289818}
+  pauseManager: {fileID: 146231478}
 --- !u!114 &745289820
 MonoBehaviour:
   m_ObjectHideFlags: 0
