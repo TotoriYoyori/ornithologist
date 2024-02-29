@@ -590,7 +590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Distribution: Europe, Siberia, North Africa, Asia'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -797,7 +797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &67478682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2196,7 +2196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Distribution: Northern Europe, Africa, Asia and Australia'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -2753,7 +2753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Distribution: Europe, Paleartic, North Africa and South Asia'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -2941,7 +2941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Diet: Grass, Herbs, Seagrass and Insects'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -4349,7 +4349,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Conservation Status: Vulnerable'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -6302,7 +6302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Conservation Status: Least Concern'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -7456,7 +7456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: White-tailed Eagle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -7489,7 +7489,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -7667,7 +7667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Diet: Omnivore'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -8047,7 +8047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Conservation Status: Least Concern'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -8181,7 +8181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Conservation Status: Least concern'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -12021,7 +12021,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Distribution: North America, Europe and western Asia'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -12155,7 +12155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Conservation Status: Least Concern'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -12624,7 +12624,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Diet: Insects and small fish'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -12812,8 +12812,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -311}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -261.95}
+  m_SizeDelta: {x: 160, y: 55.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &997351507
 MonoBehaviour:
@@ -12891,8 +12891,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0f0f2f520dc0d304fa99f3b1b51043b4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -13391,7 +13391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Conservation Status: Least Concern'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -13587,7 +13587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: Common Blackbird
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -13620,7 +13620,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -13930,7 +13930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Diet: Fish, Birds, Mammals and Carrion'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -14260,7 +14260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Diet: Anthropods, Fish and Crustaceans'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -14977,7 +14977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: Horned Grebe
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -15010,7 +15010,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -15088,7 +15088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -4.9, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1173412742
@@ -15120,8 +15120,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4281755006
+  m_fontColor: {r: 0.49411768, g: 0.39607847, b: 0.21176472, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -15672,7 +15672,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: Black Tern
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -15705,7 +15705,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -16007,7 +16007,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Distribution: Europe, North Africa, North America and Japan'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -16326,7 +16326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Diet: Omnivore'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -17068,7 +17068,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 421.34683, y: 17.844929}
+  m_AnchoredPosition: {x: 420, y: 35}
   m_SizeDelta: {x: 432, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1353343046
@@ -17091,7 +17091,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Distribution: Eurasia, North Africa, Canary Islands, South Asia, Australia
+    and New Zealand'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -17766,7 +17767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: Eurasian Wigeon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -17799,7 +17800,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -18252,7 +18253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Distribution: Eurasia and North America'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -18477,7 +18478,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: Common Crane
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -18510,7 +18511,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -18611,7 +18612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Diet: Aquatic Plants'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -19524,7 +19525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Conservation Status: Least Concern'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -20506,7 +20507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Distribution: Europe, Northern Asia and Northern America'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -21260,7 +21261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Conservation Status: Least Concern'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -23255,7 +23256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Diet: Insects, Small Fish and Crustaceans'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -23389,7 +23390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: Common Greenshank
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -23921,7 +23922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1958765756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25573,7 +25574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: Mute Swan
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -25606,7 +25607,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
