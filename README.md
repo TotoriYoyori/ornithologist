@@ -28,7 +28,7 @@ As you traverse through the wilderness, every snapshot you capture is meticulous
 ![image](https://github.com/TotoriYoyori/ornithologist/assets/89681094/adb8a16c-07fe-4caa-9f1e-e62a0446cb75)
 
 ## Contributors
-Gabriel Stasi: Programmer
-Sara Eriksson: P.O
-Ivan Sazanov: S.M
-Stan Nguyen: Graphic Designs
+- Gabriel Stasi: Programmer
+- Sara Eriksson: P.O
+- Ivan Sazanov: S.M
+- Stan Nguyen: Graphic Designs
