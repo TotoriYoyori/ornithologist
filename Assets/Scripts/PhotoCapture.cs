@@ -39,6 +39,8 @@ public class PhotoCapture : MonoBehaviour
         public int endSlot;
     }
 
+    [Header("Bird Silhouettes")]
+    [SerializeField] private GameObject[] birdSilhouettes;
 
 
     private void Start()
@@ -122,6 +124,12 @@ public class PhotoCapture : MonoBehaviour
                     // Check if the current slot index is within the specified range
                     if (currentSlotIndex >= startSlot && currentSlotIndex <= endSlot)
                     {
+                        // Deactivate the silhouette GameObject when the first picture in the range is stored
+                        if (currentSlotIndex == startSlot)
+                        {
+                            DeactivateSilhouette(birdSpecies);
+                        }
+
                         Sprite photoSprite = Sprite.Create(photoTexture, new Rect(0.0f, 0.0f, photoTexture.width, photoTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
 
                         storedPhotoDisplayAreas[currentSlotIndex].sprite = photoSprite;
@@ -163,7 +171,6 @@ public class PhotoCapture : MonoBehaviour
             winScreen.SetActive(true);
         }
     }
-
 
     void RemovePhoto()
     {
@@ -218,6 +225,20 @@ public class PhotoCapture : MonoBehaviour
         foreach (var range in speciesSlotRanges)
         {
             speciesToSlotRange[range.speciesName] = new int[] { range.startSlot, range.endSlot };
+        }
+    }
+
+    void DeactivateSilhouette(string birdSpecies)
+    {
+        // Find the silhouette GameObject corresponding to the bird species
+        foreach (var silhouette in birdSilhouettes)
+        {
+            if (silhouette.name == birdSpecies)
+            {
+                silhouette.SetActive(false); // Deactivate the silhouette
+                Debug.Log("Silhouette deactivated for bird species: " + birdSpecies);
+                break;
+            }
         }
     }
 }

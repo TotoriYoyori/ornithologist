@@ -6,6 +6,7 @@ public class ZoomOnClick : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private float smoothSpeed = 0.5f; // Speed for smooth zooming
     [SerializeField] private GameObject bookCanvas;
+    [SerializeField] private PauseGame pauseManager;
 
     private bool isZoomed = false; // Flag to track whether the camera is currently zoomed in
     private bool isZooming = false; // Flag to track whether the camera is currently in the process of zooming
@@ -33,35 +34,38 @@ public class ZoomOnClick : MonoBehaviour
 
     private void Update()
     {
-        // Check for right mouse button press
-        if (Input.GetMouseButtonDown(1) && !isZooming) // 1 corresponds to the right mouse button
+        if (!pauseManager.IsPaused())
         {
-            bookCanvas.SetActive(false);
-
-            if (!isZoomed)
+            // Check for right mouse button press
+            if (Input.GetMouseButtonDown(1) && !isZooming) // 1 corresponds to the right mouse button
             {
-                // Set zoom in target and size
-                zoomTargets[0] = mainCamera.transform.position;
-                zoomTargets[1] = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                StartCoroutine(ZoomIn());
-                isZoomed = true;
+                bookCanvas.SetActive(false);
+
+                if (!isZoomed)
+                {
+                    // Set zoom in target and size
+                    zoomTargets[0] = mainCamera.transform.position;
+                    zoomTargets[1] = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                    StartCoroutine(ZoomIn());
+                    isZoomed = true;
+                }
+                else
+                {
+                    // Set zoom out target and size
+                    zoomTargets[0] = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                    zoomTargets[1] = mainCamera.transform.position;
+                    StartCoroutine(ZoomOut());
+                    isZoomed = false;
+                }
+
+
+
+
             }
-            else
-            {
-                // Set zoom out target and size
-                zoomTargets[0] = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                zoomTargets[1] = mainCamera.transform.position;
-                StartCoroutine(ZoomOut());
-                isZoomed = false;
-            }
-
-
-
-
         }
     }
 
-    IEnumerator ZoomIn()
+        IEnumerator ZoomIn()
     {
         float elapsedTime = 0f;
         Vector3 startingPos = mainCamera.transform.position;
