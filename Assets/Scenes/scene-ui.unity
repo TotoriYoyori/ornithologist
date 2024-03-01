@@ -797,7 +797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &67478682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,6 +1653,8 @@ MonoBehaviour:
     rarityPercentage: 50
     allowedSpawnZones:
     - SpawnLand2
+    - SpawnLand1
+    - SpawnLand3
   - birdPrefab: {fileID: 8784775609529459458, guid: f9cc780392bb93a4ab8650f993758f39, type: 3}
     rarityPercentage: 50
     allowedSpawnZones:
@@ -3539,14 +3541,14 @@ RectTransform:
   m_GameObject: {fileID: 311454520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7328426, y: 1.7328426, z: 1.7328426}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1958765759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 828, y: 0}
+  m_AnchoredPosition: {x: 798, y: 2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &317043775
@@ -5283,7 +5285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 381, y: -101}
+  m_AnchoredPosition: {x: 381, y: -95}
   m_SizeDelta: {x: 546.15, y: 438.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &457063113
@@ -5311,7 +5313,13 @@ MonoBehaviour:
     Left Click - Take photo
 
     While zoomed,
-    move your cursor to the edges of the screen to move your camera'
+    move your cursor to the edges of the screen to move your camera.
+
+
+    Hit the
+    book button at the bottom right
+
+    to exit the Field Guide.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
   m_sharedMaterial: {fileID: -102494016107376566, guid: 2efe540f51c09704c8a50fd5d2262c9b, type: 2}
@@ -5677,7 +5685,7 @@ RectTransform:
   m_GameObject: {fileID: 497731819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.875, y: 1.640625, z: 1.875}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1666629995}
@@ -5686,7 +5694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 895, y: -478.56}
+  m_AnchoredPosition: {x: 867, y: -452}
   m_SizeDelta: {x: 80, y: 87.1191}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497731821
@@ -6052,16 +6060,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531954222}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.875, y: 1.640625, z: 1.875}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1958765759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 895.00006, y: -478.56003}
+  m_AnchoredPosition: {x: 867, y: -452}
   m_SizeDelta: {x: 80, y: 87.1191}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531954224
@@ -6145,7 +6153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6754716, g: 0.6754716, b: 0.6754716, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9543,7 +9551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 589, y: 25}
+  m_AnchoredPosition: {x: 589, y: 89}
   m_SizeDelta: {x: 546.15, y: 438.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753443035
@@ -15088,7 +15096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.9, y: 0}
+  m_AnchoredPosition: {x: -4.9000015, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1173412742
@@ -15120,8 +15128,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281755006
-  m_fontColor: {r: 0.49411768, g: 0.39607847, b: 0.21176472, a: 1}
+    rgba: 4284070638
+  m_fontColor: {r: 0.9339623, g: 0.7305147, b: 0.3480331, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
